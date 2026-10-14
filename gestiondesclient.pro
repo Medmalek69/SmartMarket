@@ -1,0 +1,14 @@
+QT       += core gui widgets
+
+CONFIG += c++17
+
+SOURCES += \
+    main.cpp \
+    source.cpp
+
+HEADERS += \
+    main.h
+
+FORMS += \
+    main.ui
+RESOURCES += resources.qrc
