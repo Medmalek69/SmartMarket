@@ -1,12 +1,15 @@
-#include "main.h"
 #include <QApplication>
 
-int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
-    a.setFont(QFont("Segoe UI", 10));
+#include "login.h"
 
-    MainWindow w;
-    w.show();
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
 
-    return a.exec();
+    // Projet LOCAL du module Login : on teste la fenêtre seule.
+    // (Le style est dans login.ui, propriété styleSheet de containerLogin.)
+    Login fenetre;
+    fenetre.show();
+
+    return app.exec();
 }

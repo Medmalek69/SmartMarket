@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/login">
+        <file>images_login/login_fond.png</file>
+        <file>images_login/login_logo_hydrosync.png</file>
+        <file>images_login/login_icone_email.png</file>
+        <file>images_login/login_icone_cadenas.png</file>
+        <file>images_login/login_icone_oeil.png</file>
+        <file>images_login/login_icone_face_id.png</file>
+    </qresource>
+</RCC>

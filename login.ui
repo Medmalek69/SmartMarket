@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Login</class>
+ <widget class="QMainWindow" name="Login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>520</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>HydroSync</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayoutCentralLogin">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="LoginFondWidget" name="containerLogin">
+      <property name="styleSheet">
+       <string notr="true">
+/* ===== Carte glassmorphism ===== */
+#carteLogin {
+    background-color: rgba(255, 255, 255, 150);
+    border: 1px solid rgba(255, 255, 255, 200);
+    border-radius: 28px;
+}
+#SWLogin, #PLoginConnexion, #PLoginInscription {
+    background: transparent;
+}
+
+/* ===== Textes ===== */
+QLabel {
+    background: transparent;
+    color: #1B2A6B;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 13px;
+}
+#lblTitreLogin { color: #0F6CB6; font-size: 24px; font-weight: bold; }
+#lblBienvenueConnexionLogin, #lblBienvenueInscriptionLogin {
+    font-size: 18px; font-weight: 600; margin-bottom: 4px;
+}
+#lblIdConnexionLogin, #lblMdpConnexionLogin,
+#lblIdInscriptionLogin, #lblMdpInscriptionLogin, #lblConfirmationInscriptionLogin {
+    font-weight: bold; margin-top: 4px;
+}
+
+/* ===== Champs de saisie ===== */
+QLineEdit {
+    background-color: rgba(255, 255, 255, 235);
+    border: 1px solid rgba(15, 108, 182, 60);
+    border-radius: 10px;
+    padding: 4px 10px;
+    color: #1B2A6B;
+    font-size: 14px;
+}
+QLineEdit:hover { border: 1px solid rgba(15, 108, 182, 150); }
+QLineEdit:focus { border: 2px solid #0F6CB6; }
+
+/* ===== Boutons principaux (Log in / S'inscrire) ===== */
+QPushButton#btnConnexionLogin, QPushButton#btnInscriptionLogin {
+    background-color: #0F6CB6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+QPushButton#btnConnexionLogin:hover, QPushButton#btnInscriptionLogin:hover {
+    background-color: #1380D6;
+}
+QPushButton#btnConnexionLogin:pressed, QPushButton#btnInscriptionLogin:pressed {
+    background-color: #0B5590;
+}
+
+/* ===== Boutons Face ID ===== */
+QPushButton#btnFaceIdConnexionLogin, QPushButton#btnFaceIdInscriptionLogin {
+    background-color: rgba(255, 255, 255, 235);
+    color: #1B2A6B;
+    border: 1px solid rgba(15, 108, 182, 60);
+    border-radius: 10px;
+    font-size: 14px;
+}
+QPushButton#btnFaceIdConnexionLogin:hover, QPushButton#btnFaceIdInscriptionLogin:hover {
+    background-color: white;
+}
+
+/* ===== Liens (changer de page, mot de passe oublié) ===== */
+QPushButton#btnVersInscriptionLogin, QPushButton#btnVersConnexionLogin,
+QPushButton#btnMdpOublieLogin {
+    background: transparent;
+    border: none;
+    color: #1B2A6B;
+    font-size: 13px;
+    padding: 4px;
+}
+QPushButton#btnVersInscriptionLogin:hover, QPushButton#btnVersConnexionLogin:hover {
+    color: #0F6CB6;
+    text-decoration: underline;
+}
+QPushButton#btnMdpOublieLogin { color: #D23B3B; font-size: 11px; }
+QPushButton#btnMdpOublieLogin:hover { color: #A82020; }
+</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayoutContainerLogin">
+       <item row="0" column="0" alignment="Qt::AlignCenter">
+        <widget class="QFrame" name="carteLogin">
+         <property name="minimumSize">
+          <size>
+           <width>420</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>420</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutCarteLogin">
+          <property name="spacing">
+           <number>14</number>
+          </property>
+          <property name="leftMargin">
+           <number>32</number>
+          </property>
+          <property name="topMargin">
+           <number>28</number>
+          </property>
+          <property name="rightMargin">
+           <number>32</number>
+          </property>
+          <property name="bottomMargin">
+           <number>24</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widgetEnteteLogin">
+            <layout class="QHBoxLayout" name="horizontalLayoutEnteteLogin">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <spacer name="horizontalSpacerGaucheEnteteLogin">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblLogoLogin">
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblTitreLogin">
+               <property name="text">
+                <string>HydroSync</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacerDroitEnteteLogin">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QStackedWidget" name="SWLogin">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="PLoginConnexion">
+             <layout class="QVBoxLayout" name="verticalLayoutConnexionLogin">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lblBienvenueConnexionLogin">
+                <property name="text">
+                 <string>Bon retour parmi nous !</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblIdConnexionLogin">
+                <property name="text">
+                 <string>ID ou Email</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtIdConnexionLogin">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblMdpConnexionLogin">
+                <property name="text">
+                 <string>Mot de passe</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtMdpConnexionLogin">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutMdpOublieLogin">
+                <item>
+                 <spacer name="horizontalSpacerMdpOublieLogin">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnMdpOublieLogin">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Mot de passe oublié ?</string>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnConnexionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Log in</string>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>46</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnFaceIdConnexionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Face ID</string>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnVersInscriptionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Pas encore de compte ? S'inscrire ➜</string>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="PLoginInscription">
+             <layout class="QVBoxLayout" name="verticalLayoutInscriptionLogin">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lblBienvenueInscriptionLogin">
+                <property name="text">
+                 <string>Rejoignez l'équipe</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblIdInscriptionLogin">
+                <property name="text">
+                 <string>ID ou Email</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtIdInscriptionLogin">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblMdpInscriptionLogin">
+                <property name="text">
+                 <string>Mot de passe</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtMdpInscriptionLogin">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblConfirmationInscriptionLogin">
+                <property name="text">
+                 <string>Vérifier mot de passe</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtConfirmationInscriptionLogin">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnInscriptionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>S'inscrire</string>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>46</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnFaceIdInscriptionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Face ID</string>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>44</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnVersConnexionLogin">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Déjà un compte ? Se connecter ➜</string>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LoginFondWidget</class>
+   <extends>QWidget</extends>
+   <header>loginfondwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
